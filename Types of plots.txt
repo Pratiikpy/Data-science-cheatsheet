@@ -1,0 +1,112 @@
+Line Plot
+
+A line plot is a way to display data along a number line. It is typically used to visualize the relationship between two continuous variables.
+
+
+import matplotlib.pyplot as plt
+
+# Create a line plot
+plt.plot(x, y)
+
+# Add labels and title
+plt.xlabel('X')
+plt.ylabel('Y')
+plt.title('Line Plot')
+
+# Show plot
+plt.show()
+Scatter Plot
+
+A scatter plot is a way to display the relationship between two variables. It is typically used to visualize the relationship between two continuous variables.
+
+
+import matplotlib.pyplot as plt
+
+# Create a scatter plot
+plt.scatter(x, y)
+
+# Add labels and title
+plt.xlabel('X')
+plt.ylabel('Y')
+plt.title('Scatter Plot')
+
+# Show plot
+plt.show()
+Bar Plot
+
+A bar plot is a way to display data using rectangular bars. It is typically used to visualize the relationship between a categorical variable and a continuous variable.
+
+
+import matplotlib.pyplot as plt
+
+# Create a bar plot
+plt.bar(x, y)
+
+# Add labels and title
+plt.xlabel('X')
+plt.ylabel('Y')
+plt.title('Bar Plot')
+
+# Show plot
+plt.show()
+Histogram
+
+A histogram is a way to display the distribution of a continuous variable. It is typically used to visualize the distribution of a single continuous variable.
+
+
+import matplotlib.pyplot as plt
+
+# Create a histogram
+plt.hist(x)
+
+# Add labels and title
+plt.xlabel('X')
+plt.ylabel('Frequency')
+plt.title('Histogram')
+
+# Show plot
+plt.show()
+Pie Chart
+
+A pie chart is a way to display the proportions of a whole. It is typically used to visualize the distribution of a categorical variable.
+
+
+import matplotlib.pyplot as plt
+
+# Create a pie chart
+plt.pie(sizes, labels=labels, autopct='%1.1f%%')
+
+# Add title
+plt.title('Pie Chart')
+
+# Show plot
+plt.show()
+Subplots
+
+Subplots allow you to display multiple plots in a single figure.
+
+
+import matplotlib.pyplot as plt
+
+# Create a figure with 2 rows and 2 columns
+fig, ax = plt.subplots(2, 2)
+
+# Plot data in the first subplot
+ax[0, 0].plot(x, y)
+
+# Plot data in the second subplot
+ax[0, 1].scatter(x, y)
+
+# Plot data in the third subplot
+ax[1, 0].bar(x, y)
+
+# Plot data in the fourth subplot
+ax[1, 1].hist(x)
+
+# Show plots
+plt.show()
+Key Takeaways
+
+Choose the right plot type for the data and the question being asked.
+Label plots clearly with titles, axis labels, and legend (if applicable).
+Use subplots to display multiple plots in a single figure.

@@ -1,0 +1,42 @@
+1. Visualization
+
+Visualization is a powerful tool for understanding and exploring data. Some common visualization techniques include:
+
+Histograms: These plots show the distribution of a numerical column by dividing the values into bins and showing the frequency of values in each bin.
+
+df['column'].plot(kind='hist')
+Scatter plots: These plots show the relationship between two numerical columns by plotting each data point as a dot on a graph.
+
+df.plot(x='column_1', y='column_2', kind='scatter')
+Box plots: These plots show the distribution of a numerical column by showing the median, quartiles, and range of the values.
+
+df['column'].plot(kind='box')
+2. Summary Statistics
+
+Summary statistics are numerical summaries of the data that give you an overview of the distribution of the values. Some common summary statistics include:
+
+Count: The number of data points in the column.
+
+df['column'].count()
+Mean: The average value of the data.
+
+df['column'].mean()
+Median: The middle value of the data when it is sorted.
+
+df['column'].median()
+Standard deviation: A measure of the spread of the data around the mean.
+
+df['column'].std()
+3. Grouping and Aggregation
+
+Grouping and aggregation allows you to group the data by one or more columns and apply statistical functions to the groups. For example, you can group the data by the values in a categorical column and compute the mean of a numerical column for each group:
+
+
+df.groupby('column_1')['column_2'].mean()
+4. Filtering
+
+Filtering allows you to select a subset of the data based on a certain criteria. For example, you can select rows where a column has a value greater than a certain threshold:
+
+
+df[df['column'] > threshold]
+I hope this cheatsheet is helpful to you! Let me know if you have any questions or if you need further clarification on any of the concepts covered

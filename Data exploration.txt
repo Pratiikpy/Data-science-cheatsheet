@@ -1,0 +1,64 @@
+Importing Libraries
+
+To begin with data exploration, you will need to import the necessary libraries. The most commonly used libraries for data exploration are pandas and numpy. You can import these libraries using the following code:
+
+
+import pandas as pd
+import numpy as np
+Loading Data
+
+There are several ways to load data into a pandas DataFrame. Some common ways include:
+
+Reading a CSV file:
+
+df = pd.read_csv('data.csv')
+Reading an Excel file:
+
+df = pd.read_excel('data.xlsx')
+Reading data from a database:
+
+import sqlite3
+
+# Connect to the database
+conn = sqlite3.connect('database.db')
+
+# Load the data into a DataFrame
+df = pd.read_sql('SELECT * FROM data', conn)
+Exploring Data
+
+Once you have loaded the data into a pandas DataFrame, you can begin exploring the data. Here are some common tasks that you might perform during data exploration:
+
+Viewing the first few rows of the DataFrame:
+
+df.head()
+Viewing the last few rows of the DataFrame:
+
+df.tail()
+Viewing the shape of the DataFrame (number of rows and columns):
+
+df.shape
+Viewing the data types of the columns:
+
+# Viewing the summary statistics of the numerical columns
+df.describe()
+
+# Counting the number of unique values in a column
+df['column'].nunique()
+
+# Counting the number of occurrences of each value in a column
+df['column'].value_counts()
+
+# Finding the minimum and maximum values in a column
+df['column'].min()
+df['column'].max()
+
+# Finding the mean, median, and standard deviation of a column
+df['column'].mean()
+df['column'].median()
+df['column'].std()
+
+# Plotting the distribution of a column
+df['column'].plot(kind='hist')
+
+# Plotting the relationship between two columns
+df.plot(x='column_1', y='column_2', kind='scatter')

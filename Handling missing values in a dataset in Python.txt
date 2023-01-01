@@ -1,0 +1,52 @@
+Importing Libraries
+
+To begin with handling missing values, you will need to import the necessary libraries. The most commonly used library for this purpose is pandas. You can import pandas using the following code:
+
+
+import pandas as pd
+Loading Data
+
+Before you can start handling missing values, you will need to load the data into a pandas DataFrame. You can do this using the pandas read_csv function, or by loading data from another source such as a database.
+
+
+# Load data from a CSV file
+df = pd.read_csv('data.csv')
+Identifying Missing Values
+
+You can use the isnull method to identify cells with missing values in a DataFrame. This method returns a boolean mask indicating which cells contain missing values.
+
+
+# Identify cells with missing values
+df.isnull()
+
+# Count the number of missing values in each column
+df.isnull().sum()
+Dropping Rows with Missing Values
+
+You can drop rows with missing values using the dropna method.
+
+
+# Drop rows with any missing values
+df.dropna()
+
+# Drop rows with all missing values
+df.dropna(how='all')
+
+# Drop rows with at least n non-missing values
+df.dropna(thresh=n)
+Filling Missing Values
+
+You can fill missing values with a scalar value using the fillna method.
+
+
+# Fill missing values with a scalar value
+df.fillna(value)
+
+# Fill missing values with a different value for each column
+df.fillna({'col_1': value_1, 'col_2': value_2})
+
+# Forward-fill missing values
+df.ffill()
+
+# Backward-fill missing values
+df.bfill()

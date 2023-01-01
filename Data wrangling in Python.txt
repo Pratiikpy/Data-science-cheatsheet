@@ -1,0 +1,85 @@
+Importing Libraries
+
+To begin with data wrangling, you will need to import the necessary libraries. The most commonly used library for data wrangling is pandas. You can import pandas using the following code:
+
+
+import pandas as pd
+Loading Data
+
+Before you can start wrangling the data, you will need to load it into a pandas DataFrame. You can do this using the pandas read_csv function, or by loading data from another source such as a database.
+
+
+# Load data from a CSV file
+df = pd.read_csv('data.csv')
+Selecting Columns
+
+You can select one or more columns from a DataFrame using the [] operator.
+
+
+# Select a single column
+df['column_name']
+
+# Select multiple columns
+df[['column_1', 'column_2']]
+Filtering Rows
+
+You can filter the rows of a DataFrame using a boolean mask. To create a boolean mask, you can use comparison operators such as <, >, ==, and != on a column or a combination of columns.
+
+
+# Select rows where a column is greater than a value
+df[df['column'] > value]
+
+# Select rows where multiple conditions are met
+df[(df['column_1'] > value_1) & (df['column_2'] == value_2)]
+Sorting Data
+
+You can sort the rows of a DataFrame by one or more columns using the sort_values method.
+
+
+# Sort the DataFrame by a single column
+df.sort_values(by='column_name')
+
+# Sort the DataFrame by multiple columns
+df.sort_values(by=['column_1', 'column_2'])
+
+# Sort the DataFrame in descending order
+df.sort_values(by='column_name', ascending=False)
+Grouping and Aggregation
+
+# Grouping and Aggregation
+
+# Group the data by a categorical column and compute the mean of a numerical column
+df.groupby('column_1')['column_2'].mean()
+
+# Group the data by multiple columns and compute the mean of a numerical column
+df.groupby(['column_1', 'column_2'])['column_3'].mean()
+
+# Apply multiple aggregations to a single column
+df.groupby('column_1')['column_2'].agg(['mean', 'min', 'max'])
+
+# Merging and Joining DataFrames
+
+# Merge two DataFrames on a common column
+pd.merge(df_1, df_2, on='common_column')
+
+# Merge two DataFrames using an outer join
+pd.merge(df_1, df_2, on='common_column', how='outer')
+
+# Concatenating DataFrames
+
+# Concatenate two DataFrames vertically
+pd.concat([df_1, df_2])
+
+# Concatenate two DataFrames horizontally
+pd.concat([df_1, df_2], axis=1)
+
+# Handling Missing Data
+
+# Drop rows with any missing values
+df.dropna()
+
+# Fill missing values with a scalar value
+df.fillna(value)
+
+# Fill missing values with the mean of the column
+df['column'].fillna(df['column'].mean())

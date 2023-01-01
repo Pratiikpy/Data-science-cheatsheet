@@ -1,0 +1,26 @@
+Label Encoding
+
+Label encoding is a method of encoding categorical variables as integers. It is typically used for encoding ordinal variables, where the order of the categories has meaning.
+
+
+# Import the LabelEncoder class
+from sklearn.preprocessing import LabelEncoder
+
+# Create a LabelEncoder object
+le = LabelEncoder()
+
+# Fit the encoder to the categorical data
+le.fit(df['cat_col'])
+
+# Transform the categorical data to integers
+df['cat_col_encoded'] = le.transform(df['cat_col'])
+Key Takeaways
+
+Label encoding should only be used for ordinal variables, where the order of the categories has meaning.
+Label encoding can create a ranking among the categories, which may not be appropriate if the categories are not truly ordinal.
+It is important to avoid creating a ranking if the categories are not ordinal, as this can introduce bias into the model.
+Best Practices
+
+Use one-hot encoding for categorical variables with no ordinal relationship.
+Consider using ordinal encoding for categorical variables with an ordinal relationship, as this can preserve the ordinal relationship while avoiding the creation of a ranking.
+If using label encoding, make sure to clearly communicate the meaning of the encoded values to others who may be working with the data.

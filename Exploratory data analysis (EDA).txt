@@ -1,0 +1,43 @@
+Exploratory data analysis (EDA) is the process of examining and analyzing a dataset to understand its characteristics, relationships, patterns, and anomalies. It is an important step in the data science process as it helps to identify trends, patterns, and relationships within the data that can inform the development of machine learning models and inform decision-making.
+
+Here are some best practices for performing EDA in Python:
+
+Import and Clean the Data: Start by importing the data into a pandas DataFrame and performing any necessary cleaning, such as handling missing values and dealing with outliers.
+
+Summarize the Data: Use summary statistics and visualizations to understand the overall characteristics of the data. This can include calculating measures such as mean, median, and standard deviation, as well as generating histograms, scatterplots, and boxplots.
+
+Identify Relationships and Patterns: Look for relationships and patterns in the data by plotting different features against each other and examining the distribution of the data.
+
+Test Assumptions: Test any assumptions that you have made about the data to ensure that they are accurate. This can include testing for normality, homoscedasticity, and multicollinearity.
+
+Communicate Findings: Clearly communicate your findings to others, including any trends, patterns, or relationships that you have identified, as well as any assumptions that you have made and tested.
+
+Here is an example of how to perform EDA in Python using the pandas and seaborn libraries:
+
+
+import pandas as pd
+import seaborn as sns
+
+# Load data
+df = pd.read_csv('data.csv')
+
+# Remove missing values
+df = df.dropna()
+
+# Remove outliers
+df = df[df['col'] < df['col'].quantile(0.95)]
+
+# Summary statistics
+df.describe()
+
+# Histogram
+sns.histplot(df['col'])
+
+# Scatterplot
+sns.scatterplot(x='col_1', y='col_2', data=df)
+
+# Boxplot
+sns.boxplot(x='col', y='col_2', data=df)
+
+# Correlation matrix
+sns.heatmap(df.corr())

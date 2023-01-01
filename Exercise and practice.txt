@@ -1,0 +1,21 @@
+Exercise:
+
+For this exercise, you will need to use the pandas library to manipulate a dataset. The dataset contains information on different types of fruit, including the type of fruit, the price per pound, and the quantity available.
+
+Import the pandas library and read in the dataset from a CSV file.
+Use the head() function to view the first few rows of the dataset.
+Use the describe() function to view summary statistics for the dataset.
+Create a new column in the dataset called total_cost, which is the product of the price_per_pound and quantity columns.
+Use the groupby() function to group the data by the type column and calculate the mean total_cost for each type of fruit.
+Use the sort_values() function to sort the data by the total_cost column in descending order.
+Use the to_csv() function to save the modified dataset to a new CSV file.
+Practice Problem:
+
+For this practice problem, you will need to use the numpy and matplotlib libraries to visualize a dataset. The dataset contains information on the average monthly temperature in a city over a period of several years.
+
+Import the numpy and matplotlib libraries.
+Read in the dataset from a CSV file using numpy.
+Use matplotlib to create a line plot of the temperature data.
+Add axis labels and a title to the plot.
+Use the legend() function to add a legend to the plot.
+Save the plot to an image file using the savefig() function.

@@ -1,0 +1,45 @@
+Importing the Library
+
+To use scipy, you will need to import the library using the following code:
+
+
+import scipy
+Linear Algebra
+
+scipy provides functions for performing linear algebra operations such as matrix multiplication, solving linear systems, and computing eigenvalues and eigenvectors.
+
+
+# Matrix multiplication
+scipy.matmul(A, B)
+
+# Solve a linear system Ax = b
+scipy.solve(A, b)
+
+# Compute eigenvalues and eigenvectors
+eigenvalues, eigenvectors = scipy.eig(A)
+Optimization
+
+scipy provides functions for optimizing objective functions.
+
+
+# Minimize a scalar function
+scipy.optimize.minimize(fun, x0)
+
+# Minimize a multivariate function
+scipy.optimize.minimize(fun, x0, method='CG')
+
+# Maximize a scalar function
+scipy.optimize.minimize(-fun, x0)
+Statistics
+
+scipy provides functions for statistical analysis such as computing probability distributions, fitting statistical models, and testing hypotheses.
+
+
+# Compute the Z-score of a sample
+scipy.stats.zscore(sample)
+
+# Fit a normal distribution to a sample
+mean, std = scipy.stats.norm.fit(sample)
+
+# Test the hypothesis that the mean of a sample is equal to a given value
+scipy.stats.ttest_1samp(sample, popmean)

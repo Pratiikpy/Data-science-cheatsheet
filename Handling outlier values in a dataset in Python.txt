@@ -1,0 +1,54 @@
+Importing Libraries
+
+To begin with handling outlier values, you will need to import the necessary libraries. The most commonly used library for this purpose is pandas. You can import pandas using the following code:
+
+
+import pandas as pd
+Loading Data
+
+Before you can start handling outlier values, you will need to load the data into a pandas DataFrame. You can do this using the pandas read_csv function, or by loading data from another source such as a database.
+
+
+# Load data from a CSV file
+df = pd.read_csv('data.csv')
+Identifying Outlier Values
+
+There are several ways to identify outlier values in a dataset. One common method is to use the interquartile range (IQR), which is defined as the difference between the 75th percentile and the 25th percentile of the data. Values that are outside of the range defined by the IQR are considered to be outliers.
+
+You can use the describe method to compute the IQR and identify outlier values.
+
+
+# Compute the IQR
+iqr = df['column'].describe()['75%'] - df['column'].describe()['25%']
+
+# Identify values that are outside of the IQR
+df[(df['column'] < df['column'].describe()['25%'] - 1.5*iqr) |
+   (df['column'] > df['column'].describe()['75%'] + 1.5*iqr)]
+Another method for identifying outlier values is to use the Z-score, which measures the number of standard deviations a value is from the mean. Values with a Z-score greater than 3 or less than -3 are considered to be outliers.
+
+
+# Import the scipy library for computing Z-scores
+from scipy import stats
+
+# Identify values with a Z-score greater than 3 or less than -3
+df[(stats.zscore(df['column']) > 3) | (stats.zscore(df['column']) < -3)]
+Handling Outlier Values
+
+Once you have identified the outlier values, you can handle them in several ways. One option is to simply remove them from the dataset using the drop method.
+
+# Handling Outlier Values
+
+# Remove outlier values
+df.drop(df[(df['column'] < df['column'].describe()['25%'] - 1.5*iqr) |
+           (df['column'] > df['column'].describe()['75%'] + 1.5*iqr)].index)
+
+# Replace outlier values with the median
+df['column'].mask((df['column'] < df['column'].describe()['25%'] - 1.5*iqr) |
+                  (df['column'] > df['column'].describe()['75%'] + 1.5*iqr),
+                  df['column'].median())
+
+# Replace outlier values with the minimum or maximum non-outlier value
+df['column'].mask((df['column'] < df['column'].describe()['25%'] - 1.5*iqr) |
+                  (df['column'] > df['column'].describe()['75%'] + 1.5*iqr),
+                  df['column'].clip(lower=df['column'].describe()['25%'] - 1.5*iqr,
+                                    upper=df['column'].describe()['75%'] + 1.5*iqr))

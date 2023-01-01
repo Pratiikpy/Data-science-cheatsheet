@@ -1,0 +1,89 @@
+Numpy Cheatsheet
+Numpy is a powerful library for scientific computing in Python. It provides a variety of functions and operations for working with arrays and matrices, as well as tools for linear algebra, random number generation, and statistical analysis.
+
+Installing Numpy
+To use Numpy, you will first need to install it using pip:
+
+
+pip install numpy
+Importing Numpy
+To use Numpy in your code, you will need to import it using the following import statement:
+
+
+import numpy as np
+Creating Arrays
+There are several ways to create arrays in Numpy:
+
+From a list or tuple
+You can create a Numpy array from a list or tuple using the array() function:
+
+
+a = np.array([1, 2, 3])
+print(a)  # [1 2 3]
+
+b = np.array((4, 5, 6))
+print(b)  # [4 5 6]
+Using special functions
+You can also create arrays using special functions provided by Numpy, such as zeros(), ones(), and empty():
+
+
+a = np.zeros(3)  # [0. 0. 0.]
+b = np.ones(4)  # [1. 1. 1. 1.]
+c = np.empty(5)  # [1. 1. 1. 1. 1.]
+Using arange()
+The arange() function allows you to create an array with a range of values:
+
+
+a = np.arange(0, 10, 2)  # [0 2 4 6 8]
+Array Attributes
+You can access various attributes of a Numpy array using the following properties:
+
+
+a = np.array([1, 2, 3])
+
+print(a.shape)  # (3,)
+print(a.ndim)  # 1
+print(a.dtype)  # dtype('int64')
+print(a.size)  # 3
+print(a.itemsize)  # 8 (size of each element in bytes)
+print(a.nbytes)  # 24 (total size in bytes)
+Array Indexing and Slicing
+You can access elements of a Numpy array using indexing and slicing, similar to Python lists:
+
+
+a = np.array([1, 2, 3, 4, 5, 6])
+
+print(a[0])  # 1
+print(a[-1])  # 6
+print(a[1:3])  # [2 3]
+print(a[::-1])  # [6 5 4 3 2 1]
+Array Reshaping
+Reshape array to new shape
+
+np.reshape(array, new_shape)
+Flatten array to one-dimensional
+
+array.flatten()
+Transpose array
+
+array.T
+
+Array Stacking and Splitting
+Stack arrays vertically (row-wise)
+
+np.vstack((array1, array2))
+Stack arrays horizontally (column-wise)
+
+np.hstack((array1, array2))
+Stack arrays in sequence depth-wise (along third dimension)
+
+np.dstack((array1, array2))
+Split array along rows
+
+np.split(array, indices_or_sections, axis=0)
+Split array along columns
+
+np.split(array, indices_or_sections, axis=1)
+Split array along depth (third dimension)
+
+np.dsplit(array, indices_or_sections)

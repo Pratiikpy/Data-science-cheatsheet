@@ -1,0 +1,67 @@
+Importing Libraries
+
+To begin with data manipulation, you will need to import the necessary libraries. The most commonly used library for this purpose is pandas. You can import pandas using the following code:
+
+
+import pandas as pd
+Loading Data
+
+Before you can start manipulating data, you will need to load the data into a pandas DataFrame. You can do this using the pandas read_csv function, or by loading data from another source such as a database.
+
+
+# Load data from a CSV file
+df = pd.read_csv('data.csv')
+Selecting Data
+
+You can select data from a DataFrame using the iloc and loc indexers.
+
+
+# Select a single value
+df.iloc[row, col]
+df.loc[row, col]
+
+# Select a row or column
+df.iloc[row]
+df.loc[row]
+df.iloc[:, col]
+df.loc[:, col]
+
+# Select a range of rows or columns
+df.iloc[start:end]
+df.loc[start:end]
+df.iloc[:, start:end]
+df.loc[:, start:end]
+Filtering Data
+
+You can filter data from a DataFrame using boolean indexing.
+
+
+# Filter rows based on a condition
+df[df['column'] > value]
+
+# Combine multiple conditions using & and |
+df[(df['column_1'] > value_1) & (df['column_2'] < value_2)]
+df[(df['column_1'] > value_1) | (df['column_2'] < value_2)]
+Sorting Data
+
+You can sort data in a DataFrame using the sort_values method.
+
+# Sorting Data
+
+# Sort data by a single column
+df.sort_values('column')
+
+# Sort data by multiple columns
+df.sort_values(['column_1', 'column_2'])
+
+# Sort data in descending order
+df.sort_values('column', ascending=False)
+
+# Stable sort data by a single column
+df.sort_values('column', kind='mergesort')
+
+# Stable sort data by multiple columns
+df.sort_values(['column_1', 'column_2'], kind='mergesort')
+
+# Sort data using the index
+df.sort_index()

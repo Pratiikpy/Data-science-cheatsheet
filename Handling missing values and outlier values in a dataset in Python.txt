@@ -1,0 +1,73 @@
+Importing Libraries
+
+To begin with handling missing and outlier values, you will need to import the necessary libraries. The most commonly used library for this purpose is pandas. You can import pandas using the following code:
+
+
+import pandas as pd
+Loading Data
+
+Before you can start handling missing and outlier values, you will need to load the data into a pandas DataFrame. You can do this using the pandas read_csv function, or by loading data from another source such as a database.
+
+
+# Load data from a CSV file
+df = pd.read_csv('data.csv')
+Handling Missing Values
+
+You can use the isnull method to identify cells with missing values in a DataFrame. This method returns a boolean mask indicating which cells contain missing values.
+
+
+# Identify cells with missing values
+df.isnull()
+
+# Count the number of missing values in each column
+df.isnull().sum()
+Once you have identified the missing values, you can handle them in several ways. One option is to simply remove the rows containing missing values using the dropna method.
+
+
+# Drop rows with any missing values
+df.dropna()
+
+# Drop rows with all missing values
+df.dropna(how='all')
+
+# Drop rows with at least n non-missing values
+df.dropna(thresh=n)
+Another option is to fill the missing values with a scalar value using the fillna method.
+
+
+# Fill missing values with a scalar value
+df.fillna(value)
+
+# Fill missing values with a different value for each column
+df.fillna({'col_1': value_1, 'col_2': value_2})
+
+# Forward-fill missing values
+df.ffill()
+
+# Backward-fill missing values
+df.bfill()
+Handling Outlier Values
+
+There are several ways to identify outlier values in a dataset. One common method is to use the interquartile range (IQR), which is defined as the difference between the 75th percentile and the 25th percentile of the data. Values that are outside of the range defined by the IQR are considered to be outliers.
+
+You can use the describe method too
+
+# Handling Outlier Values
+
+# Compute the IQR
+iqr = df['column'].describe()['75%'] - df['column'].describe()['25%']
+
+# Remove outlier values
+df.drop(df[(df['column'] < df['column'].describe()['25%'] - 1.5*iqr) |
+           (df['column'] > df['column'].describe()['75%'] + 1.5*iqr)].index)
+
+# Replace outlier values with the median
+df['column'].mask((df['column'] < df['column'].describe()['25%'] - 1.5*iqr) |
+                  (df['column'] > df['column'].describe()['75%'] + 1.5*iqr),
+                  df['column'].median())
+
+# Replace outlier values with the minimum or maximum non-outlier value
+df['column'].mask((df['column'] < df['column'].describe()['25%'] - 1.5*iqr) |
+                  (df['column'] > df['column'].describe()['75%'] + 1.5*iqr),
+                  df['column'].clip(lower=df['column'].describe()['25%'] - 1.5*iqr,
+                                    upper=df['column'].describe()['75%'] + 1.5*iqr))

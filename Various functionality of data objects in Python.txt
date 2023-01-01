@@ -1,0 +1,86 @@
+Lists
+
+Lists are ordered collections of items that can be of any data type. Lists are created using square brackets [] and items are separated by commas.
+
+
+# Create a list
+lst = [1, 2, 3, 'a', 'b', 'c']
+
+# Access items in a list
+lst[0]  # returns 1
+lst[-1] # returns 'c'
+
+# Modify an item in a list
+lst[0] = 10
+
+# Append an item to a list
+lst.append('d')
+
+# Insert an item at a specific index
+lst.insert(0, 0)
+
+# Remove an item from a list
+lst.remove(2)
+
+# Sort a list
+lst.sort()
+
+# Reverse a list
+lst.reverse()
+
+# Check if an item is in a list
+5 in lst  # returns False
+'b' in lst  # returns True
+
+# Get the length of a list
+len(lst)  # returns 6
+Tuples
+
+Tuples are similar to lists, but they are immutable, meaning that once they are created, their items cannot be modified. Tuples are created using parentheses () and items are separated by commas.
+
+
+# Create a tuple
+tup = (1, 2, 3, 'a', 'b', 'c')
+
+# Access items in a tuple
+tup[0]  # returns 1
+tup[-1] # returns 'c'
+
+# Check if an item is in a tuple
+5 in tup  # returns False
+'b' in tup  # returns True
+
+# Get the length of a tuple
+len(tup)  # returns 6
+Dictionaries
+
+Dictionaries are collections of key-value pairs. They are created using curly braces {} and keys are separated from values by a colon :.
+
+
+# Create a dictionary
+dct = {'a': 1, 'b': 2, 'c': 3}
+
+# Access values in a dictionary
+dct['a']  # returns 1
+
+# Modify a value in a dictionary
+dct['a'] = 10
+
+# Add a new key-value pair to a dictionary
+dct['d'] = 4
+
+# Remove a key-value pair from a dictionary
+del dct['b']
+
+# Check if a key is in a dictionary
+'e' in dct  # returns False
+'c' in dct  # returns True
+
+# Get the keys of a dictionary
+dct.keys()  # returns ['a', 'c', 'd']
+
+# Get the values of a dictionary
+dct.values()  # returns [10, 3, 4]
+
+# Get the length of a dictionary
+len(dct)  # returns 3
